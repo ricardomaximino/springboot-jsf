@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="htt://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+	<ui:composition template="/template/page/pageLayout.xhtml">
+		<ui:define name="header">
+			<div id="logo">
+				<span style="color: yellow; font-size: 60px;">Brasa</span><span
+					style="color: red; font-size: 60px;">Java</span>
+					<h:outputLabel id="lang" value="#{message.hi}" style="color:white;"/>
+			</div>
+			<div id="languages">
+				<h:form >
+					<h:selectOneMenu style="float:right; top:60px; right:200px;" id="lang" value="#{sessionManagedBean.textLocale}">
+						<f:selectItem itemLabel="ESPANOL" itemValue="es" />
+						<f:selectItem itemLabel="ENGLISH" itemValue="en" />
+						<f:selectItem itemLabel="PORTUGUES" itemValue="pt" />
+						<p:ajax listener="#{sessionManagedBean.textLocale}" oncomplete="reload()"/>
+					</h:selectOneMenu>
+				</h:form>
+			</div>
+		</ui:define>
+		<ui:define name="body">
+			<div id="body">
+				<div id="login">
+					<h:form>
+						<h1 style="color: black;">GET CONNECTED NOW!!!</h1>
+						<h:panelGrid columns="1">
+							<p:inputText size="40" value="#{loginManagedBean.loginName}"
+								a:placeholder="LOGIN NAME" />
+							<p:password size="40" value="#{loginManagedBean.password}"
+								a:placeholder="PASSWORD" />
+						</h:panelGrid>
+						<p:commandButton ajax="false" action="#{loginManagedBean.login}"
+							value="LOGIN" />
+						<a href="../pages/createAccount.jsf"
+							style="position: relative; left: 150px;">Create an account</a>
+						<br />
+					</h:form>
+				</div>
+				<a
+					style="position: relative; float: left; clear: both; top: 210px; left: 45%;"
+					href="#">Have you forgot your password?</a>
+			</div>
+		</ui:define>
+		<ui:define name="footer">
+			<div id="footer" style="background-color: white;"></div>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

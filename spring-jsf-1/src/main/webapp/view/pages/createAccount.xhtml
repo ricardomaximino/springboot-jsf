@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="htt://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+	<ui:composition template="/template/page/pageLayout.xhtml">
+		<ui:define name="header">
+			<div id="logo">
+				<span style="color: yellow; font-size: 60px;">Brasa</span><span
+					style="color: red; font-size: 60px;">Java</span>
+			</div>
+		</ui:define>
+		<ui:define name="body">
+			<div id="body">
+				<div id="createAccount">
+
+					<h:form id="userForm">
+						<h:panelGrid id="grid" columns="4" cellpadding="10">
+
+					
+							<h:outputText value="NAME: " />
+							<p:inputText id="name" value="#{userManagedBean.name}"
+								a:placeholder="Ricardo Maximino" />
+
+							<h:outputText value="FIRST LASTNAME: " />
+							<p:inputText id="firstLastName"
+								value="#{userManagedBean.firstLastName}"
+								a:placeholder="Goncalves" />
+
+							<h:outputText value="SECOND LASTNAME: " />
+							<p:inputText id="secondLastName"
+								value="#{userManagedBean.secondLastName}"
+								a:placeholder="De Moraes" />
+
+							<h:outputText value="EMAIL: " />
+							<p:inputText id="email" value="#{userManagedBean.email}"
+								a:placeholder="ricardomaximinohotmail.com" />
+
+							<h:outputText value="PASSWORD: " />
+							<p:inputText id="password" value="#{userManagedBean.password}"
+								a:placeholder="ricardomaximinohotmail.com" />
+
+							<h:outputText value="CREDIT: " />
+							<p:inputText id="credit" value="#{userManagedBean.credit}"
+								a:placeholder="2000" />
+
+							<h:outputText value="COUNTRY: " />
+							<p:inputText id="country" value="#{addressManagedBean.country}"
+								a:placeholder="Espana" />
+
+							<h:outputText value="STATE: " />
+							<p:inputText id="state" value="#{addressManagedBean.state}"
+								a:placeholder="Valencia" />
+
+							<h:outputText value="CITY: " />
+							<p:inputText id="city" value="#{addressManagedBean.city}"
+								a:placeholder="Alicante" />
+
+							<h:outputText value="TOWN: " />
+							<p:inputText id="town" value="#{addressManagedBean.town}"
+								a:placeholder="Santa Pola" />
+
+							<h:outputText value="STREET: " />
+							<p:inputText id="street" value="#{addressManagedBean.street}"
+								a:placeholder="Calle Ganaderos" />
+
+							<h:outputText value="NUMBER " />
+							<p:inputText id="number" value="#{addressManagedBean.number}"
+								a:placeholder="24" />
+
+							<p:commandButton value="Save"
+								actionListener="#{userViewManaged.save}" action="../login/login.jsf"
+								update="userForm"/>
+
+						</h:panelGrid>
+					</h:form>
+				</div>
+			</div>
+		</ui:define>
+		<ui:define name="footer">
+			<div id="footer" style="background-color: white;"></div>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

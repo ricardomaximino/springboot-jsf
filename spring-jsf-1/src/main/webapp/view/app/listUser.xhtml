@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="htt://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+	<h:body>
+		<ui:composition template="/template/app/appLayout.xhtml">
+			<ui:define name="body">
+				<h1>This is the customized Body</h1>
+				<p:dataTable id="userTable" var="user"
+					value="#{userViewManaged.users}" rows="20" paginator="true"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="20,30,40" selectionMode="single"
+					selection="#{userViewManaged.selectedUser}" rowKey="#{user.id}">
+					<p:ajax event="rowSelect" listener="#{userViewManaged.onRowSelect}"
+						update="userTable" />
+
+					<p:column headerText="ID">
+						<h:outputText value="#{user.id}" />
+					</p:column>
+
+					<p:column headerText="NAME">
+						<h:outputText value="#{user.name}" />
+					</p:column>
+
+					<p:column headerText="FIRST LASTNAME">
+						<h:outputText value="#{user.firstLastName}" />
+					</p:column>
+
+					<p:column headerText="SECOND LASTNAME">
+						<h:outputText value="#{user.secondLastName}" />
+					</p:column>
+
+					<p:column headerText="EMAIL">
+						<h:outputText value="#{user.email}" />
+					</p:column>
+
+					<p:column headerText="PASSWORD">
+						<h:outputText value="#{user.password}" />
+					</p:column>
+
+					<p:column headerText="ISACTIVE">
+						<h:outputText value="#{user.active}" />
+					</p:column>
+
+					<p:column headerText="CREDIT">
+						<h:outputText value="#{user.credit}" />
+					</p:column>
+				</p:dataTable>
+			</ui:define>
+		</ui:composition>
+	</h:body>
+</body>
+</html>

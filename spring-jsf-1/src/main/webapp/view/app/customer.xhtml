@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="htt:www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+	<h:body>
+		<ui:composition template="/template/app/appLayout.xhtml">
+			<ui:define name="body">
+				<div> Aqui</div>
+					<h1>This is the customized Header</h1>
+					<h:form id="customerForm">
+						<p:inputText value="#{customerManagedBean.firstName}" a:placeholder="FIRSTNAME"/>
+						<p:inputText value="#{customerManagedBean.lastName}"  a:placeholder="LASTNAME"/>
+						<p:inputText value="#{addressManagedBean.country}"    a:placeholder="COUNTRY"/>
+						<p:inputText value="#{addressManagedBean.city}"       a:placeholder="CITY"/>
+						<p:inputText value="#{addressManagedBean.street}"     a:placeholder="STREET"/>
+						<p:commandButton  id="customerFormButton" value="send" actionListener="#{masterManagedBean.save}" update="customerTable,customerForm"/>
+					</h:form>
+					<h:form>
+						<p:inputText value="#{masterManagedBean.search}" a:placeholder="SEARCH"/>
+						<p:commandButton value="send" actionListener="#{masterManagedBean.find}" update="customerTable"/>
+					</h:form>
+				
+				<p:dataTable id="customerTable" var="customer" value="#{masterManagedBean.customers}"
+					rows="10" paginator="true"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    rowsPerPageTemplate="5,10,15"
+                    selectionMode="single" selection="#{masterManagedBean.selectedCustomer}" rowKey="#{customer.id}"
+                >
+                    <p:ajax event="rowSelect" listener="#{masterManagedBean.onRowSelect}" update="fakeForm" />
+     			    
+					<p:column headerText="ID" sortBy="#{customer.id}">
+						<h:outputText value="#{customer.id}"></h:outputText>
+					</p:column>
+					<p:column headerText="NAME" sortBy="#{customer.firstName}">
+						<h:outputText value="#{customer.firstName}"></h:outputText>
+					</p:column>
+					<p:column headerText="LASTNAME" sortBy="#{customer.lastName}">
+						<h:outputText value="#{customer.lastName}"></h:outputText>
+					</p:column>
+				</p:dataTable>
+				<h1 id="test">Fake From</h1>
+				<h:form id="fakeForm">
+						<p:inputText id="fakeCustomerId" value="#{masterManagedBean.selectedCustomer.id}" a:placeholder="CUSTOMER_ID"/>
+						<p:inputText id="fakeFirstName" value="#{masterManagedBean.selectedCustomer.firstName}" a:placeholder="FIRSTNAME"/>
+						<p:inputText id="fakeLastName" value="#{masterManagedBean.selectedCustomer.lastName}"  a:placeholder="LASTNAME"/>
+						<p:inputText id="fakeAddressId" value="#{masterManagedBean.selectedCustomer.address.id}"    a:placeholder="ADDRESS_ID"/>
+						<p:inputText id="fakeCountry" value="#{masterManagedBean.selectedCustomer.address.country}"    a:placeholder="COUNTRY"/>
+						<p:inputText id="fakeCity" value="#{masterManagedBean.selectedCustomer.address.city}"       a:placeholder="CITY"/>
+						<p:inputText id="fakeStreet" value="#{masterManagedBean.selectedCustomer.address.street}"     a:placeholder="STREET"/>
+						<p:commandButton  value="save" actionListener="#{masterManagedBean.save}" update="customerTable,customerForm,fakeForm"/>
+						<p:commandButton  id="customerFormButton" value="send to right form" type="button" onclick="copy()"/>
+				</h:form>
+				<h1>This is the customized Footer</h1>
+				
+				<h:form id="editableCustomerForm">
+				
+						<p:inputText	id="updateCustomerId"	value="#{customerManagedBean.id}" 			a:placeholder="ID"/>
+						<p:inputText	id="updateFirstName" 	value="#{customerManagedBean.firstName}" 	a:placeholder="FIRSTNAME"/>
+						<p:inputText 	id="updateLastName" 	value="#{customerManagedBean.lastName}"  	a:placeholder="LASTNAME"/>
+						<p:inputText 	id="updateAddressId" 	value="#{addressManagedBean.id}"    		a:placeholder="ADDRESS_ID"/>
+						<p:inputText 	id="updateCountry" 		value="#{addressManagedBean.country}"    	a:placeholder="COUNTRY"/>
+						<p:inputText 	id="updateCity" 		value="#{addressManagedBean.city}"       	a:placeholder="CITY"/>
+						<p:inputText 	id="updateStreet" 		value="#{addressManagedBean.street}"     	a:placeholder="STREET"/>
+						
+						<p:commandButton  	id="customerFormButton" 
+											value="send" 
+											actionListener="#{masterManagedBean.save}" 
+											update="customerTable,customerForm,editableCustomerForm,fakeForm"
+						/>
+				</h:form>
+							
+			</ui:define>
+		</ui:composition>
+	</h:body>
+</body>
+</html>

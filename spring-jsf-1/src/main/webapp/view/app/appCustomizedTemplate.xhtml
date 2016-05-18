@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="htt://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+	<h:body>
+		<ui:composition template="/template/app/appLayout.xhtml">
+			<ui:define name="body">
+				<h1>This is the customized Body</h1>
+			</ui:define>
+			<!-- using the default body from commonLayout -->
+			<ui:define name="footer">
+				<h1>This is the customized Footer</h1>
+			</ui:define>
+		</ui:composition>
+	</h:body>
+</body>
+</html>
