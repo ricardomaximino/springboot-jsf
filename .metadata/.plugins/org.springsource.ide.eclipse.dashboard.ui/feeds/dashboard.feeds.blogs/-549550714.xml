@@ -5,7 +5,51 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2016-05-17T19:12:07Z</updated>
+  <updated>2016-05-18T22:28:00Z</updated>
+  <entry>
+    <title>Spring Roo 2.0.0M2 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/05/18/spring-roo-2-0-0m2-released" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-05-19:2505</id>
+    <updated>2016-05-18T22:28:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf on the Spring Roo team at DISID Corporation, I&amp;rsquo;m pleased to announce that Spring Roo 2.0.0.M2 has been released!&lt;/p&gt;
+&lt;p&gt;The main goal of this Spring Roo version was to update code generation to use latest Spring technologies:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use Spring IO Platform to manage dependency versions and be able to use latest Spring technologies.&lt;/li&gt;
+  &lt;li&gt;Update code generation to use the latest Spring framework versions (4.x)&lt;/li&gt;
+  &lt;li&gt;Update code generation to include Spring Boot on generated projects.&lt;/li&gt;
+  &lt;li&gt;Remove all generated configuration based on XML files and use Spring Boot auto-configuration.&lt;/li&gt;
+  &lt;li&gt;Remove Active Record data model in favor of the Repository (Spring Data) based one.&lt;/li&gt;
+  &lt;li&gt;Generate application architecture based on service layer pattern by default&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also, the Spring Roo shell has improved its usability:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;More intuitive commands that provides only the necessary parameters.&lt;/li&gt;
+  &lt;li&gt;New commands to configure Spring Roo behavior.&lt;/li&gt;
+  &lt;li&gt;Multi-module projects improvement.&lt;/li&gt;
+  &lt;li&gt;Push-in operations using Spring Roo Shell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, the presentation layer generation engine has been refactored:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Different response types are allowed in the same controller (JSON, THYMELEAF, etc&amp;hellip;)&lt;/li&gt;
+  &lt;li&gt;Views could be generated using THYMELEAF.&lt;/li&gt;
+  &lt;li&gt;View layer generation engine is based on FreeMarker templates that could be installed and customized by developers.&lt;/li&gt;
+  &lt;li&gt;Dojo has been replaced with HTML5, CSS3, Bootstrap and jQuery components. (Datatables, Select2, etc&amp;hellip;)&lt;/li&gt;
+  &lt;li&gt;New amazing Spring Roo Responsive Theme!&lt;/li&gt;
+  &lt;li&gt;&amp;hellip; and much more!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As always, new version of Spring Roo, includes some bug fixes and improvements reported by the community.&lt;/p&gt;
+&lt;p&gt;For full details on the changes made in the new Spring Roo version, please refer to the&lt;br/&gt;&lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10340&amp;version=15212"&gt;Spring Roo 2.0.0.M2 Release Notes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Additionally Spring Tool Suite (STS) team is working in releasing the STS 3.8.x which will include the Spring IDE Roo Support for Roo 2.0.0.M2.&lt;/p&gt;
+&lt;p&gt;If you want to install the updated Roo components before, you would do it manually via the Spring IDE nightly update site, but remember that you will get an unstable version of STS that could contains errors.&lt;/p&gt;
+&lt;p&gt;Thanks to all awesome users who came up with useful bug reports and suggestions.&lt;/p&gt;
+&lt;p&gt;For more specific information about Spring Roo project please see the&lt;br/&gt;&lt;a href="http://projects.spring.io/spring-roo/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-roo"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As always, you&amp;rsquo;ll also find Roo on Twitter - either follow &lt;a href="http://www.twitter.com/springroo"&gt;@SpringRoo&lt;/a&gt; or just include #SpringRoo in your tweets.&lt;/p&gt;
+&lt;p&gt;Stay tuned to Spring Roo news!&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - May 17th, 2016</title>
     <link rel="alternate" href="https://spring.io/blog/2016/05/17/this-week-in-spring-may-17th-2016" />
@@ -960,21 +1004,5 @@ Adds new &lt;a target="_blank" href="https://github.com/spring-cloud/spring-clou
 &lt;p&gt;We welcome feedback and contributions! If you have any questions, comments or suggestions, please let us know via &lt;a target="_blank" href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub Issues&lt;/a&gt;, &lt;a target="_blank" href="http://stackoverflow.com/tags/spring-cloud-dataflow"&gt;StackOverflow&lt;/a&gt;, or using the #SpringCloudDataFlow hashtag on Twitter.&lt;/p&gt;
 &lt;p&gt;We have aggressive plans for the upcoming RC release. Stay tuned!&lt;/p&gt;
 &lt;p&gt;Last but not least&amp;hellip; check out this &lt;a href="http://pivotal.io/spring-app-framework"&gt;brand new website&lt;/a&gt; to learn how Spring Accelerates Cloud Native Java Application Development!&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow for Cloud Foundry 1.0.0.M2 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/04/29/spring-cloud-data-flow-for-cloud-foundry-1-0-0-m2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Eric Bottard</name>
-    </author>
-    <id>tag:spring.io,2016-04-29:2484</id>
-    <updated>2016-04-29T18:26:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the Spring Cloud Data Flow team, I am pleased to announce the 1.0.0.M2 release of Spring Cloud Data Flow for Cloud Foundry.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-cloudfoundry"&gt;Spring Cloud Data Flow for Cloud Foundry&lt;/a&gt; allows one to use all the goodness of &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow"&gt;Spring Cloud Data Flow&lt;/a&gt; (like the Shell, UI and &lt;a href="https://network.pivotal.io/products/p-flo-for-spring-cloud-data-flow"&gt;Flo&lt;/a&gt;) while targeting Cloud Foundry as a backend. Stream components are deployed as individual apps in Cloud Foundry, leveraging the power of the platform to handle scaling and health monitoring.&lt;/p&gt;
-&lt;p&gt;This second milestone&lt;br/&gt;- builds upon the 1.0.0.M1 release of &lt;a href="https://github.com/spring-cloud/spring-cloud-deployer-cloudfoundry"&gt;Cloud Foundry implementation&lt;/a&gt; of spring-cloud-deployer&lt;br/&gt;- builds upon the 1.0.0.M3 release of Spring Cloud Data Flow&lt;br/&gt;- builds upon the 2.0.0.M4 release of the &lt;a href="https://github.com/cloudfoundry/cf-java-client"&gt;Cloud Foundry java client&lt;/a&gt;, leveraging its reactive programming style &lt;/p&gt;
-&lt;p&gt;In addition to being written from the ground up using the new &lt;a href="https://github.com/spring-cloud/spring-cloud-deployer"&gt;Spring Cloud Deployer&lt;/a&gt; abstraction for Cloud Foundry, this release improves logging and error handling for stream deployments in Cloud Foundry. It also introduces asynchronous deployment of apps, providing a better user experience in the Shell, UI and Flo.&lt;/p&gt;
-&lt;p&gt;Future work will focus on support to run short-lived tasks in Cloud Foundry, which may be any process that does not run indefinitely, including Spring Batch jobs&lt;/p&gt;
-&lt;p&gt;For a complete list of changes and improvements, please refer to &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-cloudfoundry/issues?q=milestone%3A1.0.0.M2+is%3Aclosed"&gt;1.0.0.M2 release&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
 </feed>
