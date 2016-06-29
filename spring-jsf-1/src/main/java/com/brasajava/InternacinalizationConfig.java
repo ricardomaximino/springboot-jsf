@@ -14,7 +14,7 @@ public class InternacinalizationConfig{
 	@Bean
 	public LocaleResolver localeResolver(){
 		SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
-		sessionLocaleResolver.setDefaultLocale(Locale.forLanguageTag("es"));
+		sessionLocaleResolver.setDefaultLocale(Locale.forLanguageTag("en"));
 		return sessionLocaleResolver;
 	}
 	/* for the mvc like thymeleaf

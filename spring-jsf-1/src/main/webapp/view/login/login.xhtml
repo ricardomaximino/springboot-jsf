@@ -11,41 +11,32 @@
 			<div id="logo">
 				<span style="color: yellow; font-size: 60px;">Brasa</span><span
 					style="color: red; font-size: 60px;">Java</span>
-					<h:outputLabel id="lang" value="#{message.hi}" style="color:white;"/>
-			</div>
-			<div id="languages">
-				<h:form >
-					<h:selectOneMenu style="float:right; top:60px; right:200px;" id="lang" value="#{sessionManagedBean.textLocale}">
-						<f:selectItem itemLabel="ESPANOL" itemValue="es" />
-						<f:selectItem itemLabel="ENGLISH" itemValue="en" />
-						<f:selectItem itemLabel="PORTUGUES" itemValue="pt" />
-						<p:ajax listener="#{sessionManagedBean.textLocale}" oncomplete="reload()"/>
-					</h:selectOneMenu>
-				</h:form>
 			</div>
 		</ui:define>
 		<ui:define name="body">
 			<div id="body">
 				<div id="login">
-					<h:form>
-						<h1 style="color: black;">GET CONNECTED NOW!!!</h1>
-						<h:panelGrid columns="1">
-							<p:inputText size="40" value="#{loginManagedBean.loginName}"
-								a:placeholder="LOGIN NAME" />
-							<p:password size="40" value="#{loginManagedBean.password}"
-								a:placeholder="PASSWORD" />
-						</h:panelGrid>
-						<p:commandButton ajax="false" action="#{loginManagedBean.login}"
-							value="LOGIN" />
-						<a href="../pages/createAccount.jsf"
-							style="position: relative; left: 150px;">Create an account</a>
-						<br />
-					</h:form>
+						<form id="login_form" action="/view/login/login.jsf" method="post">
+					<p>
+						<label for="username" class="login-form-tag">#{message.username}</label><br/>
+						<input type="text" style="width:280px; height:30px; font-size: 18px;" id="username" name="username" class="ui-corner-all" required="required"/>
+					</p>
+					<p>
+						<label  for="password" class="login-form-tag">#{message.password}</label><br/>
+						<input type="password" style="width:280px; height:30px; font-size: 18px;" id="password" name="password" class="ui-corner-all" required="required"/>
+					</p>
+					<p>
+						<button type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+							<span class="ui-button-text">#{message.login}</span>
+						</button>
+					</p>
+				</form>
 				</div>
 				<a
 					style="position: relative; float: left; clear: both; top: 210px; left: 45%;"
 					href="#">Have you forgot your password?</a>
 			</div>
+		
 		</ui:define>
 		<ui:define name="footer">
 			<div id="footer" style="background-color: white;"></div>

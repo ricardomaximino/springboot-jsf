@@ -34,7 +34,7 @@ public class TestUser extends SpringTest{
 		user.setAddress(this.generateAddress());
 		user.setBirthday(LocalDate.of(1982, 11, 15));
 		user.setCredit(new BigDecimal(1200));
-		user.setEmail("ricardomaximino@hotmail.com");
+		user.setUsername("ricardomaximino@hotmail.com");
 		user.setPassword("Ricardo2");
 		user.setEmails(this.emailList());
 		user.setPhones(this.phoneList());
@@ -59,7 +59,7 @@ public class TestUser extends SpringTest{
 			user.setActive(false);
 			user.setBirthday(LocalDate.of(1982, 11, 15));
 			user.setCredit(new BigDecimal(1200));
-			user.setEmail("ricardomaximino@hotmail.com"+i);
+			user.setUsername("ricardomaximino@hotmail.com"+i);
 			user.setPassword("Ricardo2");
 			user.setEmails(this.emailList());
 			user.setPhones(this.phoneList());

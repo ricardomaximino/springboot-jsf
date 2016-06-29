@@ -19,7 +19,7 @@ import com.brasajava.beans.User;
 @Scope("request")
 public class UserManagedBean extends User {
 	private static final Logger log = LoggerFactory.getLogger(UserManagedBean.class);
-
+	
 	@PostConstruct
 	public void init() {
 		log.info("UserManagedBean Starts");

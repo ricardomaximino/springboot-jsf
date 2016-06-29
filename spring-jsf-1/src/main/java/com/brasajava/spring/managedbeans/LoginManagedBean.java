@@ -37,7 +37,7 @@ public class LoginManagedBean {
 		String result = "../app/customer.jsf";
 		if(loginName != null && !loginName.isEmpty()){
 			log.info("loginName is not null nether empty");
-			User user = userRepository.findByEmail(loginName);
+			User user = userRepository.findByUsername(loginName);
 			if(user != null){
 				log.info("User: " + user.toString());
 				if(user.getPassword() != null ){

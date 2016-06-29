@@ -1,8 +1,8 @@
 package com.brasajava.beans.interfaces;
 
 public interface Loggable {
-	void setEmail(String email);
-	String getEmail();
+	void setUsername(String email);
+	String getUsername();
 	void setPassword(String password);
 	String getPassword();
 	void setActive(boolean active);

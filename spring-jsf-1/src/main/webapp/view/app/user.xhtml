@@ -10,6 +10,12 @@
 	<h:body>
 		<ui:composition template="/template/app/appLayout.xhtml">
 			<ui:define name="body">
+			<h1><p:outputLabel id="lang" value="#{message.hi}" style="color:black"/></h1>
+			<h:form >
+					<p:inputText value="#{sessionManagedBean.textLocale}"/>
+					
+					<p:commandButton actionListener="#{sessionManagedBean.test}" value="send" update="lang"/>
+				</h:form>
 				<h1><h:outputLabel value="#{message.customizedHeader}"/> </h1>
 
 				<h:panelGrid id="grid" columns="2" cellpadding="10">
@@ -35,13 +41,12 @@
 								value="#{userManagedBean.secondLastName}"
 								a:placeholder="De Moraes" />
 
-							<h:outputText value="EMAIL: " />
-							<p:inputText id="email" value="#{userManagedBean.email}"
+							<h:outputText value="USERNAME " />
+							<p:inputText id="username" value="#{userManagedBean.username}"
 								a:placeholder="ricardomaximinohotmail.com" />
 
 							<h:outputText value="PASSWORD: " />
-							<p:inputText id="password" value="#{userManagedBean.password}"
-								a:placeholder="ricardomaximinohotmail.com" />
+							<p:inputText id="password" value="#{userManagedBean.password}"/>
 
 							<h:outputText value="CREDIT: " />
 							<p:inputText id="credit" value="#{userManagedBean.credit}"
@@ -100,15 +105,14 @@
 								value="#{userViewManaged.selectedUser.secondLastName}"
 								a:placeholder="De Moraes" />
 
-							<h:outputText value="EMAIL: " />
+							<h:outputText value="USERNAME: " />
 							<p:inputText id="emailEdit"
-								value="#{userViewManaged.selectedUser.email}"
+								value="#{userViewManaged.selectedUser.username}"
 								a:placeholder="ricardomaximinohotmail.com" />
 
 							<h:outputText value="PASSWORD: " />
 							<p:inputText id="passwordEdit"
-								value="#{userViewManaged.selectedUser.password}"
-								a:placeholder="ricardomaximinohotmail.com" />
+								value="#{userViewManaged.selectedUser.password}" />
 
 							<h:outputText value="CREDIT: " />
 							<p:inputText id="creditEdit"
@@ -172,8 +176,8 @@
 						<h:outputText value="#{user.secondLastName}" />
 					</p:column>
 
-					<p:column headerText="EMAIL">
-						<h:outputText value="#{user.email}" />
+					<p:column headerText="USERNAME">
+						<h:outputText value="#{user.username}" />
 					</p:column>
 
 					<p:column headerText="PASSWORD">

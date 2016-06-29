@@ -33,10 +33,11 @@ public class User implements Person, Loggable{
 	private String secondLastName;
 	private LocalDate birthday;
 	@Column(unique=true, nullable=false)
-	private String email;
+	private String username;
 	@Column(nullable=false)
 	private String password;
-	private boolean active;
+	@Column(name="enabled")
+	private boolean active = true;
 	@OneToOne(targetEntity=AddressImpl.class, cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	private Address address;
 	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
@@ -95,12 +96,12 @@ public class User implements Person, Loggable{
 		return birthday;
 	}
 	@Override
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String email) {
+		this.username = email;
 	}
 	@Override
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 	@Override
 	public void setPassword(String password) {
@@ -151,7 +152,7 @@ public class User implements Person, Loggable{
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", firstLastName=" + firstLastName + ", secondLastName="
-				+ secondLastName + ", birthday=" + birthday + ", email=" + email + ", password=" + password
+				+ secondLastName + ", birthday=" + birthday + ", email=" + username + ", password=" + password
 				+ ", active=" + active + ", address=" + address + ", phones=" + phones + ", emails=" + emails
 				+ ", credit=" + credit + ", permissions=" + permissions + "]";
 	}

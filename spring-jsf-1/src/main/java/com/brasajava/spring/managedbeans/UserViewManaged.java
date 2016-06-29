@@ -1,10 +1,12 @@
 package com.brasajava.spring.managedbeans;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.apache.tomcat.jni.Time;
 import org.primefaces.event.SelectEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +21,7 @@ import com.brasajava.beans.interfaces.Address;
 import com.brasajava.repositories.UserRepository;
 
 @Component
-@Scope("session")
+@Scope("request")
 public class UserViewManaged {
 	private static final Logger log = LoggerFactory.getLogger(UserViewManaged.class);
 
@@ -75,8 +77,8 @@ public class UserViewManaged {
 			newUser.setName(user.getName());
 			newUser.setFirstLastName(user.getFirstLastName());
 			newUser.setSecondLastName(user.getSecondLastName());
-			newUser.setBirthday(user.getBirthday());
-			newUser.setEmail(user.getEmail());
+			newUser.setBirthday(LocalDate.now());
+			newUser.setUsername(user.getUsername());
 			newUser.setPassword(user.getPassword());
 			newUser.setActive(user.isActive());
 			newUser.setEmails(user.getEmails());
