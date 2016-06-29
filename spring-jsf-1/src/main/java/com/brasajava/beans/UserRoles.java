@@ -1,10 +1,10 @@
 package com.brasajava.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,31 +12,30 @@ import javax.persistence.Table;
 public class UserRoles {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	@OneToOne
-	private User user;
-	@OneToOne
-	private Role role;
+	@Column(name="user_role_id")
+	private long userRoleId;
+	@Column(name="user_id")
+	private Long userId;
+	@Column(name="role")
+	private String role;
 	
-	public long getId() {
-		return id;
+	public long getUserRoleId() {
+		return userRoleId;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setUserRoleId(long userRoleId) {
+		this.userRoleId = userRoleId;
 	}
-	public User getUser() {
-		return user;
+	public Long getUserId() {
+		return userId;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
-	public Role getRole() {
+	public String getRole() {
 		return role;
 	}
-	public void setRole(Role role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
 
 }

@@ -23,7 +23,7 @@ import com.brasajava.beans.interfaces.Loggable;
 import com.brasajava.beans.interfaces.Person;
 
 @Entity
-@Table(name="user")
+@Table(name="users")
 public class User implements Person, Loggable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
