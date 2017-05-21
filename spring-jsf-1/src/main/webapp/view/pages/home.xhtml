@@ -7,7 +7,10 @@
 	xmlns:p="http://primefaces.org/ui">
 	<h:body>
 		<ui:composition template="/template/page/pageLayout.xhtml">
-		
+			<ui:define name="body">
+				<h1>This is the customized Body</h1>
+				<h:link outcome="/view/app/user.jsf" value="App User" />
+			</ui:define>
 		</ui:composition>
 	</h:body>
 </html>

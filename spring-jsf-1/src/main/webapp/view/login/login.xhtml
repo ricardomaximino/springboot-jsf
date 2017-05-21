@@ -15,6 +15,8 @@
 		</ui:define>
 		<ui:define name="body">
 			<div id="body">
+			<h:outputText rendered="#{param.logout!=null}">You have been logged out successfully.</h:outputText>
+			<h:outputText rendered="#{param.error!=null}">You have entred a wrong username or/and password.</h:outputText>
 				<div id="login">
 						<form id="login_form" action="/view/login/login.jsf" method="post">
 					<p>

@@ -1,21 +1,16 @@
 package com.brasajava;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	@Autowired
-	private UserDetailsService userDetailsService;
+	//@Autowired
+	//private UserDetailsService userDetailsService;
 	@Override
 	protected void configure(HttpSecurity http)throws Exception{
 		
@@ -30,24 +25,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.formLogin()
 				.loginPage("/view/login/login.jsf")
 				.loginProcessingUrl("/view/login/login.jsf")
-				.defaultSuccessUrl("/view/app/user.jsf")
+				.defaultSuccessUrl("/view/pages/home.jsf")
 				.passwordParameter("password")
 				.usernameParameter("username")
 				.and()
 				.exceptionHandling()
-				.accessDeniedPage("/view/login/error.jsf");
+				.accessDeniedPage("/view/login/error.jsf")
+				.and()
+			.logout()
+				.logoutUrl("/view/login/logout")
+				.logoutSuccessUrl("/view/login/login.jsf?logout");
 		
-		http.logout()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/view/login/logout"))
+		/*http.logout()
+				.logoutRequestMatcher(new AntPathRequestMatcher("/view/login/logout.jsf"))
 				.invalidateHttpSession(true)
-				.logoutSuccessUrl("/view/login/login.jsf");
+				.logoutSuccessUrl("/view/login/login.jsf?logout");*/
 	}
 	@Autowired
 	public void configAuthentication(AuthenticationManagerBuilder auth)throws Exception{
-		auth.userDetailsService(userDetailsService);//.passwordEncoder(passwordEncoder());
+		//auth.userDetailsService(userDetailsService);//.passwordEncoder(passwordEncoder();
+		//auth.jdbcAuthentication().getUserDetailsService();
 		/*
 		 * THIS APROCHE IS USED FOR IN MEMORY AUTHENTICATION
-		 * 
+		 */
 		auth.inMemoryAuthentication()
 				.withUser("user")
 				.password("user")
@@ -56,7 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.withUser("admin")
 				.password("admin")
 				.roles("ADMIN");
-		 */
+		/* */
 	}
 	/*@Bean(name="passwordEncoder")
 	public PasswordEncoder passwordEncoder(){

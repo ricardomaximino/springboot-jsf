@@ -96,14 +96,6 @@ public class User implements Person, Loggable{
 		return birthday;
 	}
 	@Override
-	public void setUsername(String email) {
-		this.username = email;
-	}
-	@Override
-	public String getUsername() {
-		return username;
-	}
-	@Override
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -155,6 +147,14 @@ public class User implements Person, Loggable{
 				+ secondLastName + ", birthday=" + birthday + ", email=" + username + ", password=" + password
 				+ ", active=" + active + ", address=" + address + ", phones=" + phones + ", emails=" + emails
 				+ ", credit=" + credit + ", permissions=" + permissions + "]";
+	}
+	@Override
+	public void setUsername(String email) {
+		username = email;
+	}
+	@Override
+	public String getUsername() {
+		return username;
 	}
 	
 }

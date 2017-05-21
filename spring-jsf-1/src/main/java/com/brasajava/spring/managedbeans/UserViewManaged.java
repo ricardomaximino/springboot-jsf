@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Scope;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import com.brasajava.beans.AddressImpl;
@@ -66,6 +67,10 @@ public class UserViewManaged {
 		}
 	}
 
+	public boolean getAuthentication(){
+		return (SecurityContextHolder.getContext().getAuthentication().getPrincipal() instanceof User);
+	}
+	
 	private void setToSave() {
 
 		try {

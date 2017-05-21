@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:ui="http://java.sun.com/jsf/facelets">
 	<body>
 		<ui:composition>
 			<div id="logo">
 				<span style="color:yellow; font-size: 60px;">Brasa</span><span style="color:red;font-size: 60px;">Java</span>
 			</div>
+			<h:panelGroup rendered="#{!userViewManaged.authentication}">
+				<a href="#{request.contextPath}/view/login/logout">logout</a>
+				<!-- <c:set var="root" value="#{request.contextPath}/" /><li><a href="#{root}index.xhtml">Home</a></li> -->	
+			</h:panelGroup>
 		</ui:composition>
 	</body>
 </html>

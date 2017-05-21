@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:ui="http://java.sun.com/jsf/facelets">
-	<body>
-		<ui:composition>
-			<div id="header">
-				<div id="logo">
-					<span style="color:yellow; font-size: 60px;">Brasa</span><span style="color:red;font-size: 60px;">Java</span>
-				</div>
-				<div id="menu">
-					<ul>
-						<li><a href="/view/pages/home.jsf">HOME</a></li>
-						<li><a href="/view/pages/java.jsf">JAVA</a></li>
-						<li><a href="/view/pages/capoeira.jsf">CAPOEIRA</a></li>
-						<li><a href="/view/pages/languages.jsf">LANGUAGES</a></li>
-						<li><a href="/view/pages/office.jsf">OFFICE</a></li>
-					</ul>
-				</div>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+	<ui:composition>
+		<div id="header">
+			<div id="logo">
+				<span style="color: yellow; font-size: 60px;">Brasa</span><span
+					style="color: red; font-size: 60px;">Java</span>
+				<form action="${request.contextPath}/view/login/logout" method="POST">
+					<input type="submit" value="Logout" /> 
+					<!--  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />-->
+				</form>
 			</div>
-		</ui:composition>
-	</body>
+			<div id="menu">
+				<ul>
+					<li><a href="/view/pages/home.jsf">HOME</a></li>
+					<li><a href="/view/pages/java.jsf">JAVA</a></li>
+					<li><a href="/view/pages/capoeira.jsf">CAPOEIRA</a></li>
+					<li><a href="/view/pages/languages.jsf">LANGUAGES</a></li>
+					<li><a href="/view/pages/office.jsf">OFFICE</a></li>
+				</ul>
+			</div>
+		</div>
+	</ui:composition>
+</body>
 </html>

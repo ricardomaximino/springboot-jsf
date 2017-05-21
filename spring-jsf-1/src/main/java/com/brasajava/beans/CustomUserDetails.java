@@ -19,15 +19,20 @@ public class CustomUserDetails extends User implements UserDetails{
 		System.out.println("USER: " + user);
 		System.out.println("ROLES: " + userRoles);
 		this.setActive(user.isActive());
+		this.setAddress(user.getAddress());
+		this.setId(user.getId());
 		this.setUsername(user.getUsername());
 		this.setPassword(user.getPassword());
 		this.userRoles = userRoles;
+		
 		
 	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		String roles = StringUtils.collectionToCommaDelimitedString(userRoles);
-		return AuthorityUtils.commaSeparatedStringToAuthorityList(roles);
+		List<GrantedAuthority> list = AuthorityUtils.commaSeparatedStringToAuthorityList(roles);
+		System.out.println(list);
+		return list;
 	}
 
 	@Override
